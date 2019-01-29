@@ -12,11 +12,34 @@ const data = [
 ];
 
 class App extends Component {
+  state = {
+    isUnmount:false
+  };
+
+  componentDidMount() {
+    setTimeout(()=> {
+      this.setState({
+        isUnmount:true
+      });
+    }, 5000);
+
+    setTimeout(()=> {
+      this.setState({
+        isUnmount:false
+      });
+    }, 10000);
+  }
+
+
+
   render() {
     return (
       <div className="App">
-       <Todos title={"강의목표"}
-       items={data}/>
+        {!this.state.isUnmount &&
+          <Todos title={"강의목표"}
+                 items={data} isUnmount={this.state.isUnmount}
+          />
+        }
       </div>
     );
   }
