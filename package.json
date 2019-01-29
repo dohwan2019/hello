@@ -27,13 +27,13 @@
   ],
   "husky": {
     "husky": {
-      "pre-commit": "list-staged"
+      "pre-commit": "lint-staged"
     }
   },
-  "list-stated": {
-    "src/**/*.{js, jsx, ts, tsx, json, css, scss, md}": [
-      "prettier --single-quote --write",
-      "git add"
-    ]
+  "lint-stated": {
+    "linters": {
+      "src/**/*.{js, jsx, ts, tsx, json, css, scss, md}": ["prettier", "git add"]
+    },
+    "ignore": ["node_modules/**",".git/**"]
   }
 }
