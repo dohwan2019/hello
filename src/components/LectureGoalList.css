@@ -1,0 +1,9 @@
+.LectureGoalList {
+  background-color: deepskyblue;
+  font-family: dotum, -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  font-size: .8em;
+}
+
+.LectureGoalList li {
+  text-align: left;
+}
