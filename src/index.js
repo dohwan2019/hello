@@ -1,30 +1,21 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import * as serviceWorker from './serviceWorker';
 
-
-
-const myElem=<p>이렇게 써도 되나?</p>;
-
-const myCom=()=><p>이렇게 써도 되나?</p>
-
-class myKlass extends React.Component {
-
-  render() {
-    return (
-      <p>
-        클래스형 컴포넌트
-      </p>
-    );
-  }
-
+function tick() {
+//  console.log('tick', this);
+  const element = (
+    <div>
+      <hi>Hello, world!</hi>
+      <h2>It is {new Date().toLocaleTimeString()}.</h2>
+    </div>
+  )
+  ReactDOM.render(element, document.getElementById('root'));
 }
 
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: http://bit.ly/CRA-PWA
-//serviceWorker.unregister();
 
-ReactDOM.render(<App />, document.getElementById('root'));
+
+const nTimer=setInterval(tick, 100);
+
+const nTimer2=setTimeout(function(){clearTimeout(nTimer)}, 5000);
+
+console.log(nTimer, nTimer2);
