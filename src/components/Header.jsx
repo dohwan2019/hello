@@ -5,19 +5,23 @@ import './Header.css';
 class Header extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {isRolling: true };
+    this.state = {isRolling: true, title: "LIKE" };
 
     this.handleClick = this.handleClick.bind(this);
   }
 
   handleClick() {
+    console.log(this);
     this.setState({
-      isRolling: !this.isRolling
+      isRolling: this.title === "LOVE" ? true : false,
+      title: this.title === "LOVE" ? "LIKE" : "LOVE"
     })
   }
 
   render() {
     const {isRolling, title} = this.state;
+
+    console.log(isRolling);
 
     return (
       <header className="Header">
