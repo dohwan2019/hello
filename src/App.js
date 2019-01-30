@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
-import Todos from './components/Todos';
+import TodoList from './components/TodoList';
+import Timer from './components/Timer';
 
 const data = [
   {name:"React 개발에 필요한 환경을 구축한다.", completed:true, color: 'red'},
@@ -35,11 +36,12 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        {!this.state.isUnmount &&
-          <Todos title={"강의목표"}
+
+          <TodoList title={"강의목표"}
                  items={data} isUnmount={this.state.isUnmount}
           />
-        }
+
+          <Timer expireDate={'2019-01-30T14:25:00+09:00'}/>
       </div>
     );
   }
