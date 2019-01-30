@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import MarkEditor from "./components/MarkEditor";
+import ControlledForm from "./components/ControlledForm"
 //import Header from "./components/Header";
 //import TodoList from './components/TodoList';
 //import Timer from './components/Timer';
@@ -51,6 +52,7 @@ class App extends Component {
     return (
       <div className="App">
         <MarkEditor/>
+        <ControlledForm/>
       </div>
     );
   }

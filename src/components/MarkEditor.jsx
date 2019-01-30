@@ -8,13 +8,26 @@ const Preview = props => {
 };
 
 class MarkEditor extends React.Component {
+constructor(props) {
+  super(props);
+
+  this.state = {
+    value: ''
+  };
+}
+
+  handleTextChange = ({target}) => {
+    console.log(target.innerText);
+    this.setState({
+      value: target.innerText
+    })
+  }
+
     render() {
         return (<div>
             <h2>마크다운 에디터</h2>
-            <Preview value={'# markdown-it'}/>
-            <input type="text" defaultValue="" onChange={()=>{}
-
-            }/>
+            <Preview value={this.state.value}/>
+            <div contentEditable={true} onKeyPress={this.handleTextChange}/>
         </div>);
     }
 }
