@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
-import Header from "./components/Header";
+import MarkEditor from "./components/MarkEditor";
+//import Header from "./components/Header";
 //import TodoList from './components/TodoList';
 //import Timer from './components/Timer';
 
@@ -49,7 +50,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <Header/>
+        <MarkEditor/>
       </div>
     );
   }
@@ -63,6 +64,9 @@ class App extends Component {
          <TodoList title={"강의목표"}
                   items={data} isUnmount={this.state.isUnmount}
         />
+
+
+         <Header/>
 */
 
 export default App;

@@ -30,6 +30,14 @@ class Header extends React.Component {
           className={`App-logo ${isRolling ? 'rotate' : ''}`}
                alt="logo"
           />
+          <img src={logo}
+               className={`App-logo ${isRolling ? 'rotate2' : ''}`}
+               alt="logo"
+          />
+          <img src={logo}
+               className={`App-logo ${isRolling ? 'rotate3' : ''}`}
+               alt="logo"
+          />
           <h1 className="App-title">{title}</h1>
         </div>
       </header>

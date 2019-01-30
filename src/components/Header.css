@@ -10,6 +10,14 @@
   animation: App-logo-spin infinite 20s linear;
 }
 
+.rotate2 {
+  animation: App-logo-spin infinite 1s linear;
+}
+
+.rotate3 {
+  animation: App-logo-spin infinite 10s linear;
+}
+
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
