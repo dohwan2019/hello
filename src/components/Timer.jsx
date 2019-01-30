@@ -12,12 +12,29 @@ class Timer extends React.Component {
     }
   }
 
+  checkExpired = () => {
+    const {expireDate} = this.props;
+    const {mtNow}=this.state;
+    const mtExpire=moment(expireDate);
+    return mtExpire > mtNow;
+  }
+
   componentDidMount() {
-    setInterval(()=>{
+    this.nTimer=setInterval(()=>{
       this.setState({
         mtNow: moment(),
       })
     }, 1000);
+  }
+
+  componentDidUpdate(prevProps, prevState, snapshot) {
+    if(!this.checkExpired()) {
+      clearInterval(this.nTimer);
+
+      const {onComplete} = this.props;
+
+      onComplete();
+    }
   }
 
   render() {
