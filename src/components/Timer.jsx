@@ -1,5 +1,5 @@
 import React from 'react';
-import './Timer.css';
+import './Timer.less';
 import moment from 'moment';
 import 'moment/locale/ko';
 
@@ -46,7 +46,7 @@ class Timer extends React.Component {
 
     return (
       <div className="Timer">
-        <div>{`현재시간은 ${mtNow.format('a hh:mm')}, ${mtExpire.format('a hh:mm')}`}</div>
+        <div className="current">{`현재시간은 ${mtNow.format('a hh:mm')}, ${mtExpire.format('a hh:mm')}`}</div>
         {isExpire ? (
         <div>{`${mtExpire.fromNow()}에 강의 종료 합니다`}</div>
           ) : (

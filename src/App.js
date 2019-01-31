@@ -1,10 +1,12 @@
 import React, { Component } from 'react';
-import './App.css';
+import './App.less';
 import MarkEditor from "./components/MarkEditor";
 import ControlledForm from "./components/ControlledForm"
+import {Button} from 'antd';
 //import Header from "./components/Header";
 import TodoList from './components/TodoList';
-//import Timer from './components/Timer';
+import Timer from './components/Timer';
+import Counter from './components/Counter';
 
 
 const data = [
@@ -41,21 +43,26 @@ class App extends Component {
   }
 */
 
-  /*
+
   handleComplete = () => {
     this.setState({
       isUnmount:false
     });
-  }
-*/
+  };
+
   render() {
     return (
       <div className="App">
+        <Button loading>Ant Design</Button>
         <MarkEditor/>
         <ControlledForm/>
         <TodoList title={"강의목표"}
                   items={data} isUnmount={this.state.isUnmount}
         />
+
+        <Counter/>
+
+
       </div>
     );
   }
@@ -72,6 +79,8 @@ class App extends Component {
 
 
          <Header/>
+
+         <Timer expireDate={'2019-01-31T14:57:00+09:00'} onComplete={this.handleComplete}/>
 */
 
 export default App;
