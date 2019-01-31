@@ -3,10 +3,10 @@ import './App.css';
 import MarkEditor from "./components/MarkEditor";
 import ControlledForm from "./components/ControlledForm"
 //import Header from "./components/Header";
-//import TodoList from './components/TodoList';
+import TodoList from './components/TodoList';
 //import Timer from './components/Timer';
 
-/*
+
 const data = [
   {name:"React 개발에 필요한 환경을 구축한다.", completed:true, color: 'red'},
   {name:"새로운 자바스크립트 문법을 익힌다.", completed:true, color: 'red'},
@@ -15,7 +15,7 @@ const data = [
   {name:"PR 코드 리뷰를 응용한 개발 프로세스를 익힌다.", completed:false, color: 'red'},
   {name:"React 로 간단한 노트 앱을 만들어본다.", completed:true, color: 'red'}
 ];
-*/
+
 class App extends Component {
   constructor(props) {
     super(props);
@@ -53,6 +53,9 @@ class App extends Component {
       <div className="App">
         <MarkEditor/>
         <ControlledForm/>
+        <TodoList title={"강의목표"}
+                  items={data} isUnmount={this.state.isUnmount}
+        />
       </div>
     );
   }

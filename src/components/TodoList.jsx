@@ -21,6 +21,11 @@ class TodoList extends React.Component {
     console.log('click', this);
   }
 
+  handleOnChange = ({target}) => {
+    console.log(target);
+    target.setAttribute("checked", "");
+  }
+
   render() {
     const {title, items, isUnmount} = this.props;
     console.log({isUnmount});
@@ -33,7 +38,7 @@ class TodoList extends React.Component {
             const {name, completed} = item;
 
             return (
-              <li key={idx}><input type="checkbox" defaultChecked={true} readOnly/>{name} -> {isUnmount?"완료":"미완료"}</li>
+              <li key={idx}><input type="checkbox" checked={true} onChange={this.handleOnChange} readOnly/>{name} -> {isUnmount?"완료":"미완료"}</li>
             )
           })}
         </ul>
