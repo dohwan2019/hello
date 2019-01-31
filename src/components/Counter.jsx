@@ -18,13 +18,18 @@ class Counter extends PureComponent {
     let num = Math.random() * 1000;
     num = Math.ceil(num);
     console.log(num);
-    list.push(num);
+
+    let templist = [];
+
+    for (let i = 0; i < 5; i++) {
+      if (list[i] % 2 !== 0) {
+        templist[templist.length]=list[i];
+      }
+    }
 
     this.setState({
-      list: list,
+      list: [...templist],
     });
-
-    this.forceUpdate();
   };
 
   render() {
